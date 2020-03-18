@@ -79,7 +79,6 @@ class QrcodeController extends AdminController
 
         $form->saved(function (Form $form) {
             $id=$form->model()->id;
-            dd($id);
             $url=env("APP_URL").'QR/?codeid='.$id;
             $filename='uploads/qrcode/'.$id.'.png';
             GQrCode::format('png')
@@ -91,6 +90,7 @@ class QrcodeController extends AdminController
              $qr->save();
 
         });
+
 
        // $form->image('qrcodefile','图片')->removable();
 
