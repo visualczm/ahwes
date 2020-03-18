@@ -72,12 +72,59 @@ class QrcodeController extends AdminController
     {
         $form = new Form(new Qrcode);
 
-        $form->text('redirect', __('网址'));
+        $form->text('redirect', __('网址'))->rules('required|url');
+
+
+        $form->saved(function (Form $form) {
+            $id=$form->model()->id;
+            $url=env("APP_URL").'QR/?codeid='.$id;
+            GQrCode::format('png')
+                //->merge(public_path('images/login_ico.png'))
+                ->generate($url,public_path('uploads/qrcode/'.$id.'.png'));
+
+        });
+
        // $form->image('qrcodefile','图片')->removable();
-        GQrCode::format('png')->merge('/public/images/login_ico.png')->generate("http://ahwes.com/qrcode/?qrcode");
 
 
 
+
+
+
+        $form->footer(function ($footer) {
+
+            // 去掉`重置`按钮
+            $footer->disableReset();
+
+            // 去掉`提交`按钮
+
+            // 去掉`查看`checkbox
+            $footer->disableViewCheck();
+
+            // 去掉`继续编辑`checkbox
+            $footer->disableEditingCheck();
+
+            // 去掉`继续创建`checkbox
+            $footer->disableCreatingCheck();
+
+
+
+        });
+
+
+        $form->tools(function (Form\Tools $tools) {
+
+            // 去掉`列表`按钮
+            $tools->disableList();
+
+            // 去掉`删除`按钮
+            $tools->disableDelete();
+
+            // 去掉`查看`按钮
+            $tools->disableView();
+
+            // 添加一个按钮, 参数可以是字符串, 或者实现了Renderable或Htmlable接口的对象实例
+             });
 
         return $form;
     }

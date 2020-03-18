@@ -15,7 +15,7 @@ class QrcodeController extends Controller
  {
 
 
-     $id=$qrcode->input('qrcode');
+     $id=$qrcode->input('codeid');
      $qr=Qrcode::find($id);
      if ($qr)
          return redirect($qr->redirect);
