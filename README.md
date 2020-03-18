@@ -16,3 +16,7 @@ php artisan key:generate
 ````
 ahwes.sql
 ````
+
+````
+composer dump-autoload
+````

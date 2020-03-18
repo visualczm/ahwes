@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => 'DESSAUL SYSTEM',
+    'name' => '安徽维尔斯策划',
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<b>DESSAUL</b> SYSTEM',
+    'logo' => '<b>AHWES</b> SYSTEM',
 
     /*
     |--------------------------------------------------------------------------
@@ -153,7 +153,7 @@ return [
     'upload' => [
 
         // Disk in `config/filesystem.php`.
-        'disk' => 'qiniu',
+        'disk' => 'local',
         // Image and file upload path under the disk above.
         'directory' => [
             'image' => 'images',

@@ -17,7 +17,7 @@ class HomeController extends Controller
 
      $about=\App\Models\About::select('mission')->findOrFail(1);
 
-     $product=\App\Models\Product::where('push','=',1)->get();
+     $product=\App\Models\Qrcode::where('push','=',1)->get();
 
 
     return view('index',compact('imports','about','product'));
@@ -27,7 +27,7 @@ class HomeController extends Controller
 
 // public function product()
 // {
-//       $pro= Product::all();
+//       $pro= QrcodeController::all();
 //
 //     return view('product',compact(['pro']));
 //

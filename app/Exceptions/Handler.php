@@ -46,6 +46,18 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof ValidationException) {
+            return $this->invalidJson($request,$exception);
+        }
+
+        /**
+         * 如果对应异常拥有渲染方法则调用
+         */
+        if( method_exists( $exception ,'render' )  )
+        {
+            return $exception->render( $request );
+        }
+
         return parent::render($request, $exception);
     }
 }
