@@ -25,6 +25,9 @@ class QrcodeController extends AdminController
      */
     protected function grid()
     {
+
+
+
         $grid = new Grid(new Qrcode);
         $grid->column('id', __('Id'))->hide();
         $grid->column('qrcodefile', '二维码')->image(env('APP_URL'), 300, 300);
@@ -74,13 +77,18 @@ class QrcodeController extends AdminController
 
         $form->text('redirect', __('网址'))->rules('required|url');
 
-
         $form->saved(function (Form $form) {
             $id=$form->model()->id;
+            dd($id);
             $url=env("APP_URL").'QR/?codeid='.$id;
+            $filename='uploads/qrcode/'.$id.'.png';
             GQrCode::format('png')
+                ->size(210)
                 //->merge(public_path('images/login_ico.png'))
-                ->generate($url,public_path('uploads/qrcode/'.$id.'.png'));
+                ->generate($url,public_path($filename));
+             $qr=Qrcode::find($id);
+             $qr->qrcodefile=$filename;
+             $qr->save();
 
         });
 
