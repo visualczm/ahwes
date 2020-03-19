@@ -86,7 +86,7 @@ class QrcodeController extends AdminController
         $form->text('qrname', '名称');
         $form->text('redirect', __('网址'))->rules('required|url');
 
-        $form->number('size',"二维码像素")->min(150)->max(320)
+        $form->number('size',"二维码像素")->min(120)->max(3000)
             ->default(210)
             ->help('计算公式:像素单位=(厘米*dpi)/25.4')
             ->required();
