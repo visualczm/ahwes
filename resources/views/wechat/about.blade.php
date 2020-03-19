@@ -29,6 +29,8 @@
 
             line-height: 30px;
         }
+
+        body{background: #031871;margin-bottom: 30px}
     </style>
 </head>
 <body>
@@ -40,6 +42,7 @@
         </div>
 
     </div>
+
     <div class="footer" >皖ICP备17005514号-1 皖网文[2019] 4652-199 号</div>
 
 </div>
