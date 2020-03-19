@@ -17,6 +17,13 @@
  * Admin::js('/packages/prettydocs/js/main.js');
  *
  */
-
+use Encore\Admin\Grid\Column;
 //Encore\Admin\Form::forget(['map', 'editor']);
 Encore\Admin\Form::extend('editor', Encore\WangEditor\Editor::class);
+
+
+
+Column::extend('addlab', function ($value,$text) {
+    return "$value<span style='margin-left: 5px'>$text<span>";
+});
+

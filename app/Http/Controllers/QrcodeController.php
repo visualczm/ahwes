@@ -13,16 +13,9 @@ class QrcodeController extends Controller
      */
  public function index(Request $qrcode)
  {
-
-
      $id=$qrcode->input('codeid');
-     $qr=Qrcode::find($id);
-     if ($qr)
-         return redirect($qr->redirect);
-     else
-     return new Exception(['没有找到活码跳转的资料！']);
-
-
-}
+     $qr=Qrcode::findOrFail($id);
+     return redirect($qr->redirect);
+ }
 
 }
