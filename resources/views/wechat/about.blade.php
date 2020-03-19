@@ -13,8 +13,8 @@
     <title>维尔斯直播团队</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="./layui/css/layui.css">
-    <script src="./layui/layui.js"></script>
+    <link rel="stylesheet" href="{{ asset('layui/css/layui.css') }}?v=2.5.5">
+    <script src="{{ asset('layui/layui.js') }}?v=2.5.5"></script>
     <style>
         .footer{
             position: fixed;
