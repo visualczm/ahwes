@@ -208,7 +208,7 @@ return [
     */
     'operation_log' => [
 
-        'enable' => true,
+        'enable' => false,
 
         /*
          * Only logging allowed methods in the list
@@ -298,7 +298,7 @@ return [
     | This value is used to set the background image of login page.
     |
     */
-    'login_background_image' => 'http://res.dessaul.com/Adminbg.jpg',
+    'login_background_image' => '',
 
     /*
     |--------------------------------------------------------------------------

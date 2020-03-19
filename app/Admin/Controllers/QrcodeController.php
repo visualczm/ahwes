@@ -104,14 +104,14 @@ class QrcodeController extends AdminController
             if((bool)$model->merge)
             GQrCode::format('png')
                 ->size($model->size)
-                ->margin(0)
+                ->margin(5)
                 ->errorCorrection('H')
                 ->merge($logo,.3,true)
                 ->generate($url,public_path($filename));
             else
                 GQrCode::format('png')
                     ->size($model->size)
-                    ->margin(0)
+                    ->margin(5)
                     ->generate($url,public_path($filename));
 
              $qr=Qrcode::find($model->id);
