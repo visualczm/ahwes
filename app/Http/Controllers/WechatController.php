@@ -13,7 +13,7 @@ class WechatController extends Controller
 
      $config = config('wechat.official_account.default');
      $app = Factory::officialAccount($config);
-     $wx=$app->jssdk->buildConfig(array('checkJsApi','updateAppMessageShareData','updateTimelineShareData','onMenuShareAppMessage','onMenuShareTimeline'), true);
+     $wx=$app->jssdk->buildConfig(array('checkJsApi','updateAppMessageShareData','updateTimelineShareData','onMenuShareAppMessage','onMenuShareTimeline'),false);
 
 
      return view('wechat.about',compact('wx'));
