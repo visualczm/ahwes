@@ -384,6 +384,9 @@ return [
     */
     'extension_dir' => app_path('Admin/Extensions'),
 
+
+    'secure' => true,
+
     /*
     |--------------------------------------------------------------------------
     | Settings for extensions.
@@ -428,3 +431,4 @@ return [
         ]
     ],
 ];
+

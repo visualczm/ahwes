@@ -683,7 +683,7 @@ var config = {
     // 自定义上传图片超时时间 ms
     uploadImgTimeout: 10000,
 
-    // 上传图片 hook 
+    // 上传图片 hook
     uploadImgHooks: {
         // customInsert: function (insertLinkImg, result, editor) {
         //     console.log('customInsert')
@@ -1012,7 +1012,7 @@ function Head(editor) {
         width: 100,
         $title: $('<p>设置标题</p>'),
         type: 'list', // droplist 以列表形式展示
-        list: [{ $elem: $('<h1>H1</h1>'), value: '<h1>' }, { $elem: $('<h2>H2</h2>'), value: '<h2>' }, { $elem: $('<h3>H3</h3>'), value: '<h3>' }, { $elem: $('<h4>H4</h4>'), value: '<h4>' }, { $elem: $('<h5>H5</h5>'), value: '<h5>' }, { $elem: $('<p>正文</p>'), value: '<p>' }],
+        list: [{ $elem: $('<h1>H1</h1>'), value: '<h1>' }, { $elem: $('<h2>H2</h2>'), value: '<h2>' }, { $elem: $('<h3>H3</h3>'), value: '<h3>' }, { $elem: $('<h4>H4</h4>'), value: '<h4>' }, { $elem: $('<h5>h5</h5>'), value: '<h5>' }, { $elem: $('<p>正文</p>'), value: '<p>' }],
         onClick: function onClick(value) {
             // 注意 this 是指向当前的 Head 对象
             _this._command(value);

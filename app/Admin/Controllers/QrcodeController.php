@@ -87,10 +87,10 @@ class QrcodeController extends AdminController
         $form->text('redirect', __('网址'))->rules('required|url');
         $form->text('size', __('二维码像素'))->rules('digits_between:0,3000')
             ->default(210)
-            ->help('计算公式:像素单位=(厘米*dpi)/25.4')
+            ->help('厘米->像素的计算公式:像素单位=(1厘米*10*dpi)/25.4')
             ->required();
         $form->switch('merge',"维尔斯图标")
-            ->help('维尔斯的图表插入在二维码中间');
+            ->help('维尔斯的图标插入在二维码中间');
 
         $form->saved(function (Form $form) {
 
